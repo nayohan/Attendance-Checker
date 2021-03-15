@@ -120,10 +120,11 @@ class Ui_MainWindow(object):
             print(saved_id)
             self.txt_id.setText(saved_id)
             self.txt_pw.setText(saved_pw)
-            self.txt_name_1.setText("문화예술")
-            self.txt_name_2.setText("인공지능")
-            self.txt_name_3.setText("임베디드SW")
-            self.txt_name_4.setText("캡스턴")
+            # 과목명을 고정하고 싶을 때
+            # self.txt_name_1.setText("문화예술")
+            # self.txt_name_2.setText("인공지능")
+            # self.txt_name_3.setText("임베디드SW")
+            # self.txt_name_4.setText("캡스턴")
             self.txt_start.setText("1")
             self.txt_end.setText("1")
         except:
@@ -177,7 +178,6 @@ class Ui_MainWindow(object):
         file.write(PW)
         file.close()
 
-
         # driver import
         driver = webdriver.Chrome('chromedriver.exe')
         # url 로딩
@@ -195,10 +195,10 @@ class Ui_MainWindow(object):
 
         try:
             # pop up # 팝업창 추가 # 맨앞부터
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_349901"]/div[3]/span').click()
             driver.find_element_by_xpath('//*[@id="notice_popup_1_345940"]/div[3]/span').click()
             driver.find_element_by_xpath('//*[@id="notice_popup_1_341027"]/div[3]/span').click()
             driver.find_element_by_xpath('//*[@id="notice_popup_1_341026"]/div[3]/span').click()
-
 
         except:
             print('non popup')
@@ -274,7 +274,8 @@ class Ui_MainWindow(object):
                                 time.sleep(3)
                                 driver.find_element_by_xpath('//*[@id="vod_viewer"]').click()
                                 time.sleep(1)
-                                # driver.find_element_by_xpath('//*[@id="vod_player"]/div[8]/div[4]/div[3]/div[10]').click() #전체화면
+                                # 전체화면으로 녹화하고싶을 때
+                                # driver.find_element_by_xpath('//*[@id="vod_player"]/div[8]/div[4]/div[3]/div[10]').click()
                             except:
                                 # already played
                                 ######## 이미 재생된 영상 에러...############
@@ -309,10 +310,7 @@ class Ui_MainWindow(object):
         return
 
 
-
 if __name__ == "__main__":
-    import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
