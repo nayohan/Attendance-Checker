@@ -113,20 +113,30 @@ class Ui_MainWindow(object):
 
         # load id file
         try:
-            file = open('save_id.txt', 'r')
-            idpw = file.read()
-            saved_id = idpw[:9]
-            saved_pw = idpw[9:]
-            print(saved_id)
-            self.txt_id.setText(saved_id)
-            self.txt_pw.setText(saved_pw)
-            # 과목명을 고정하고 싶을 때
-            # self.txt_name_1.setText("문화예술")
-            # self.txt_name_2.setText("인공지능")
-            # self.txt_name_3.setText("임베디드SW")
-            # self.txt_name_4.setText("캡스턴")
-            self.txt_start.setText("1")
-            self.txt_end.setText("1")
+            file = open('save_prev_data.txt', 'r')
+            # 아이디, 비밀번호
+            self.txt_id.setText(file.readline().strip('\n'))
+            self.txt_pw.setText(file.readline().strip('\n'))
+            # 과목명
+            try:
+                self.txt_name_1.setText(file.readline().strip('\n'))
+            except:
+                print('empty txt_name_1')
+            try:
+                self.txt_name_2.setText(file.readline().strip('\n'))
+            except:
+                print('empty txt_name_2')
+            try:
+                self.txt_name_3.setText(file.readline().strip('\n'))
+            except:
+                print('empty txt_name_3')
+            try:
+                self.txt_name_4.setText(file.readline().strip('\n'))
+            except:
+                print('empty txt_name_4')
+            # 주차 설정
+            #self.txt_start.setText("1")
+            #self.txt_end.setText("1")
         except:
             print('Hello, First client!')
 
@@ -173,9 +183,12 @@ class Ui_MainWindow(object):
         STD_SECTION = section_now
 
         # save id file
-        file = open('save_id.txt', 'w')
-        file.write(ID)
-        file.write(PW)
+        file = open('save_prev_data.txt', 'w')
+        file.write(ID + "\n")
+        file.write(PW + "\n")
+        for i in range(4):
+            data = CLASS_NAME[i]
+            file.write(data + "\n")
         file.close()
 
         # driver import
