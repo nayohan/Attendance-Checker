@@ -8,7 +8,8 @@ E-learning Attendance Checker
 ## Requirements
 To use, install requirement library
 ~~~
-pip install -r requirements.txt
+pip install selenium
+pip install pyqt5
 ~~~
 
 
