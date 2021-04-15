@@ -208,10 +208,8 @@ class Ui_MainWindow(object):
 
         try:
             # pop up # 팝업창 추가 # 맨앞부터
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_376594"]/div[3]/span').click()
             driver.find_element_by_xpath('//*[@id="notice_popup_1_354316"]/div[3]/span').click()
-            driver.find_element_by_xpath('//*[@id="notice_popup_1_345940"]/div[3]/span').click()
-            driver.find_element_by_xpath('//*[@id="notice_popup_1_341027"]/div[3]/span').click()
-            driver.find_element_by_xpath('//*[@id="notice_popup_1_341026"]/div[3]/span').click()
 
         except:
             print('non popup')
