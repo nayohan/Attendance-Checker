@@ -207,10 +207,13 @@ class Ui_MainWindow(object):
         # driver_pw.send_keys(Keys.ENTER)
 
         try:
-            # pop up # 팝업창 추가 # 맨앞부터
-            driver.find_element_by_xpath('//*[@id="notice_popup_1_408049"]/div[3]/span').click()
-            driver.find_element_by_xpath('//*[@id="notice_popup_1_354316"]/div[3]/span').click()
-
+            # pop up # 팝업창 추가 #
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_429948"]/div[3]/span').click()
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_425577"]/div[3]/span').click()
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_421319"]/div[3]/span').click()
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_421317"]/div[3]/span').click()
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_420954"]/div[3]/span').click()
+            driver.find_element_by_xpath('//*[@id="notice_popup_1_420953"]/div[3]/span').click()
         except:
             print('non popup')
 
