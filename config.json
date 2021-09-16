@@ -1,6 +1,8 @@
 {
     "week": 3,
-    "subject": ["임베디드시스템특강", "캡스턴디자인"],
+    "class_link": ["http://cyber.inu.ac.kr/course/view.php?id=38224",
+                   "http://cyber.inu.ac.kr/course/view.php?id=35842"
+                ],
 
     "id": "2016xxxxx",
     "password": "xxxxxxxx"
